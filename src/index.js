@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//el dom indica que donde encuentre en el document.getElementById('root') le coloque el 
+//componente 'app'
 ReactDOM.render(
   <React.StrictMode>
     <App />
