@@ -2,6 +2,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Producto from './components/Producto'
 import {useState, Fragment} from 'react';
+import Changuito from './components/Changuito'
 
 //componente padre app.js
 function App() {
@@ -23,14 +24,30 @@ function App() {
 
   ]);
 
+  //state para el changuito de compras
+  // primero coloco el nombre del state y después una funcion para modificar el state
+  const [changuito, agregarProducto] = useState([]);
+
   return (
     <Fragment>
       
       <Header /> 
       <h1>Ferretería Kurko Bain , Herramientas online.</h1>
+            
+      {articulos.map(articulo => 
+        (
+         <Producto 
+          key = {articulo.id} 
+          articulo = {articulo}
+          articulos = {articulos}
+          changuito = {changuito}
+          agregarProducto = {agregarProducto}
+          />))}
       
-      {articulos.map(articulo => ( <Producto articulo = {articulo}/>))}
-      
+      <Changuito
+        changuito = {changuito}
+      />
+
       <Footer 
       //puedo crear una propiedad y enviarla desde el comp padre hacia el hijo
       // puedo enviar diferentes tipos de props, en este caso un string
